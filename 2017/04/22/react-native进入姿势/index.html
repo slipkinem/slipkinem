@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="javascript,reactNative," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.png?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="开始战斗从react到react native, 已经走过许多时间。react native是一个高性能的用javascript开发app的框架。准备学一点react，然后觉得不如直接学习react-native，就开始了react-native之路，从环境搭建到一个小DEMO，花了不少时间，主要是下载太麻烦 准备工作 ide: 我选择idea，习惯了 电脑：win7的i5渣配置，所以先不打算进行">
+<meta name="keywords" content="javascript,reactNative">
+<meta property="og:type" content="article">
+<meta property="og:title" content="react-native进入姿势">
+<meta property="og:url" content="http://faceplus.top/2017/04/22/react-native进入姿势/index.html">
+<meta property="og:site_name" content="faceplus&#39;s home">
+<meta property="og:description" content="开始战斗从react到react native, 已经走过许多时间。react native是一个高性能的用javascript开发app的框架。准备学一点react，然后觉得不如直接学习react-native，就开始了react-native之路，从环境搭建到一个小DEMO，花了不少时间，主要是下载太麻烦 准备工作 ide: 我选择idea，习惯了 电脑：win7的i5渣配置，所以先不打算进行">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://faceplus.top/2017/04/22/react-native进入姿势/directory.jpg">
+<meta property="og:image" content="http://faceplus.top/2017/04/22/react-native进入姿势/wox.jpg">
+<meta property="og:image" content="http://faceplus.top/2017/04/22/react-native进入姿势/androids.jpg">
+<meta property="og:image" content="http://faceplus.top/2017/04/22/react-native进入姿势/avd.jpg">
+<meta property="og:image" content="http://faceplus.top/2017/04/22/react-native进入姿势/android_home.jpg">
+<meta property="og:image" content="http://faceplus.top/2017/04/22/react-native进入姿势/tools.jpg">
+<meta property="og:image" content="http://faceplus.top/2017/04/22/react-native进入姿势/snap3555.jpg">
+<meta property="og:image" content="http://faceplus.top/2017/04/22/react-native进入姿势/snap3556.jpg">
+<meta property="og:image" content="http://faceplus.top/2017/04/22/react-native进入姿势/gen.jpg">
+<meta property="og:image" content="http://faceplus.top/2017/04/22/react-native进入姿势/err.jpg">
+<meta property="og:image" content="http://faceplus.top/2017/04/22/react-native进入姿势/verr.jpg">
+<meta property="og:image" content="http://faceplus.top/2017/04/22/react-native进入姿势/configerr.jpg">
+<meta property="og:image" content="http://faceplus.top/2017/04/22/react-native进入姿势/success.jpg">
+<meta property="og:image" content="http://faceplus.top/2017/04/22/react-native进入姿势/sdk.png">
+<meta property="og:image" content="http://faceplus.top/2017/04/22/react-native进入姿势/netErr.jpg">
+<meta property="og:image" content="http://faceplus.top/2017/04/22/react-native进入姿势/dev.jpg">
+<meta property="og:image" content="http://faceplus.top/2017/04/22/react-native进入姿势/host.jpg">
+<meta property="og:image" content="http://faceplus.top/2017/04/22/react-native进入姿势/reload.jpg">
+<meta property="og:image" content="http://faceplus.top/2017/04/22/react-native进入姿势/devSuccess.jpg">
+<meta property="og:image" content="http://faceplus.top/2017/04/22/react-native进入姿势/bigSuccess.jpg">
+<meta property="og:updated_time" content="2017-10-30T10:05:02.673Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="react-native进入姿势">
+<meta name="twitter:description" content="开始战斗从react到react native, 已经走过许多时间。react native是一个高性能的用javascript开发app的框架。准备学一点react，然后觉得不如直接学习react-native，就开始了react-native之路，从环境搭建到一个小DEMO，花了不少时间，主要是下载太麻烦 准备工作 ide: 我选择idea，习惯了 电脑：win7的i5渣配置，所以先不打算进行">
+<meta name="twitter:image" content="http://faceplus.top/2017/04/22/react-native进入姿势/directory.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://faceplus.top/2017/04/22/react-native进入姿势/"/>
+
+
+
+
+
+  <title>react-native进入姿势 | faceplus's home</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">faceplus's home</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">小伙子</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://faceplus.top/2017/04/22/react-native进入姿势/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="slipkinem">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="faceplus's home">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">react-native进入姿势</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-22T11:34:51+08:00">
+                2017-04-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/自学历程/" itemprop="url" rel="index">
+                    <span itemprop="name">自学历程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="开始战斗"><a href="#开始战斗" class="headerlink" title="开始战斗"></a>开始战斗</h2><p>从react到react native, 已经走过许多时间。react native是一个高性能的用javascript开发app的框架。<br>准备学一点react，然后觉得不如直接学习react-native，就开始了react-native之路，从环境搭建到一个小DEMO，花了不少时间，主要是下载太麻烦</p>
+<h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><ol>
+<li>ide: 我选择idea，习惯了</li>
+<li>电脑：win7的i5渣配置，所以先不打算进行ios开发</li>
+<li>没有vpn，宽带是交话费送的10M联通宽带，网速还行1m/s</li>
+<li>推荐给电脑安装<strong><a href="http://www.getwox.com/" target="_blank" rel="noopener">wox</a>和everything(wox插件就有)</strong>，方便寻找文件</li>
+</ol>
+<h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><h3 id="node环境"><a href="#node环境" class="headerlink" title="node环境"></a>node环境</h3><ol>
+<li>下载安装<strong>nodeJs</strong>（最新的就行），为了防止环境变量有问题，不要修改安装目录</li>
+<li>使用 node-v npm -v 看看有没有安装成功<a id="more"></a></li>
+<li><p>注册淘宝镜像 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; npm config set registry https://registry.npm.taobao.org --global</span><br><span class="line">&gt; npm config set disturl https://npm.taobao.org/dist --global</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>下载<strong>yarn</strong>，react-native默认使用yarn下载</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; npm i -g yarn</span><br><span class="line">&gt; yarn -v</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>给<strong>yarn</strong>注册淘宝镜像</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; yarn config set registry https://registry.npm.taobao.org --global</span><br><span class="line">&gt; yarn config set disturl https://npm.taobao.org/dist --global</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="react-native安装"><a href="#react-native安装" class="headerlink" title="react-native安装"></a>react-native安装</h3><ol>
+<li><p>使用yarn下载react-native-cli</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; yarn global add react-native-cli</span><br><span class="line">&gt; react-native --version</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建项目,一直等待下载完成，生成的目录还是很清晰的</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; react-native init rnDemo</span><br></pre></td></tr></table></figure>
+<p><img src="/2017/04/22/react-native进入姿势/directory.jpg" alt="directory"></p>
+</li>
+<li><p>试着运行项目</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; cd rnDemo</span><br><span class="line">&gt; npm start</span><br></pre></td></tr></table></figure>
+<p>命令行显示，8081端口开启服务。在浏览器输入<a href="localhost:8081" target="_blank" rel="noopener">localhost:8081</a>,显示<code>React Native packager is running.</code>，说明服务还是通畅的。可咱们要做安卓项目！所以继续使用命令行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; react-native run-android</span><br></pre></td></tr></table></figure>
+<p>不出意外会挺慢，因为要下载gradle（gradle是安卓项目常用的构建工具，用来管理jar包和执行任务）和jar包，命令行会提示在此url下载文件<code>Download https://jcenter.bintray.com/com/android/tools/annotations/25.2.3/annotations-25.2.3.jar</code></p>
+</li>
+<li><p>因为网络的问题，所以给gradle配置阿里云maven（java常用的包管理工具，有一个下载的仓库，但很慢）镜像。进入<strong>.gradle</strong>文件夹，一般在<code>C:\Users\Administrator\.gradle</code>，使用wox就简单多了<br><img src="/2017/04/22/react-native进入姿势/wox.jpg" alt="wox"><br>在 <strong>.gradle</strong> 文件夹里面新建 <strong>init.gradle</strong> 文件，并写入下面代码，或<a href="init.gradle">点击下载init.gradle</a></p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">allprojects&#123;</span><br><span class="line">    repositories &#123;</span><br><span class="line">        <span class="keyword">def</span> REPOSITORY_URL = <span class="string">'http://maven.aliyun.com/nexus/content/groups/public/'</span></span><br><span class="line">        all &#123; ArtifactRepository repo -&gt;</span><br><span class="line">            <span class="keyword">if</span>(repo <span class="keyword">instanceof</span> MavenArtifactRepository)&#123;</span><br><span class="line">                <span class="keyword">def</span> url = repo.url.toString()</span><br><span class="line">                <span class="keyword">if</span> (url.startsWith(<span class="string">'https://repo1.maven.org/maven2'</span>) || url.startsWith(<span class="string">'https://jcenter.bintray.com/'</span>)) &#123;</span><br><span class="line">                    project.logger.lifecycle <span class="string">"Repository $&#123;repo.url&#125; replaced by $REPOSITORY_URL."</span></span><br><span class="line">                    remove repo</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        maven &#123;</span><br><span class="line">            url REPOSITORY_URL</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>继续运行命令<code>react-native run-android</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; react-native run-android</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>可以看到下载速度快了好多，但最后会发现报错<code>SDK location not found</code>，这是因为没有安装 <strong>android sdk</strong> ，接下来配置 <strong>android环境</strong></p>
+<h3 id="android开发环境配置"><a href="#android开发环境配置" class="headerlink" title="android开发环境配置"></a>android开发环境配置</h3><ol>
+<li>安装java环境，搜一下有N多教程</li>
+<li>下载<strong>android studio</strong> 没有翻墙的话推荐使用<a href="https://pan.baidu.com/s/1jIyKHjK" target="_blank" rel="noopener">网盘下载</a></li>
+<li>安装<strong>android studio</strong> 推荐使用默认安装一直点击<code>next</code>  </li>
+<li>第一次启动会进入下面界面<br><img src="/2017/04/22/react-native进入姿势/androids.jpg" alt="androids"><ul>
+<li>standard 标准配置，推荐第一次安装使用能够</li>
+<li>custom 选择安装， 可以自己定制安装选项<br>由于是第一此安装就直接选用默认的<strong>standard</strong>安装，但是react-native官网推荐custom</li>
+</ul>
+</li>
+<li>记得勾选<strong>Android Virtual Device</strong>，一直<strong>next</strong>，最后点击<strong>finished</strong>等待下载完成<br><img src="/2017/04/22/react-native进入姿势/avd.jpg" alt="avd"></li>
+</ol>
+<h3 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h3><p>在电脑环境变量设置里面，点击新建，ANDROID_HOME sdk路径<br><img src="/2017/04/22/react-native进入姿势/android_home.jpg" alt="ANDROID_HOME"><br>然后再到环境变量 <strong>path</strong> 里面添加类似这样<br><code>C:\Users\Administrator\AppData\Local\Android\Sdk\tools</code><br><code>C:\Users\Administrator\AppData\Local\Android\Sdk\platform-tools</code><br>一定注意路径的正确性<br><img src="/2017/04/22/react-native进入姿势/tools.jpg" alt="tools"></p>
+<h3 id="再次运行"><a href="#再次运行" class="headerlink" title="再次运行"></a>再次运行</h3><ol>
+<li>运行<code>react-native run-android</code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; react-native run-android</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>又提示报错关于 <code>[Android SDK Platform 23, Android SDK Build-Tools 23.0.1].</code>， 这是由于少了build-tools 23.0.1, 在sdk manager里面安装就行了<br><img src="/2017/04/22/react-native进入姿势/snap3555.jpg" alt="snap3555"><br><img src="/2017/04/22/react-native进入姿势/snap3556.jpg" alt="snap3556"><br>点击<strong>finished</strong></p>
+<ol>
+<li>运行<code>react-native run-android</code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; react-native run-android</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>提示报错<code>com.android.builder.testing.api.DeviceException: No connected devices!</code>, 由于没连上设备导致的错误</p>
+<h3 id="连接设备"><a href="#连接设备" class="headerlink" title="连接设备"></a>连接设备</h3><p>adb（连接devices的驱动）可以通过模拟器和真机进行，android studio带的模拟器不怎么好用，所以我选择用强大的<strong>genymotion</strong>进行开发</p>
+<h4 id="下载genymotion免费版并启动"><a href="#下载genymotion免费版并启动" class="headerlink" title="下载genymotion免费版并启动"></a>下载genymotion免费版并启动</h4><ol>
+<li>下载并安装<a href="https://pan.baidu.com/share/link?shareid=3943454172&amp;uk=3073382768#list/path=%2F" target="_blank" rel="noopener">genymotion免费版</a>,替换安装目录文件就免费了</li>
+<li>由于<strong>genymotion</strong>依赖virtualbox，下载安装<a href="https://www.baidu.com/s?ie=utf-8&amp;f=3&amp;rsv_bp=1&amp;rsv_idx=1&amp;tn=baidu&amp;wd=virtualbox&amp;oq=genymotion%25E7%25A0%25B4%25E8%25A7%25A3%25E7%2589%2588&amp;rsv_pq=e656eb5a0011ec27&amp;rsv_t=715efDZI0lJ%2B1tsmUpCuiiAat7RfExGnvVtlkSWbKVbC%2BS9zwTu7ku7rueA&amp;rqlang=cn&amp;rsv_enter=1&amp;inputT=1128&amp;rsv_sug3=8&amp;rsv_sug1=8&amp;rsv_sug7=100&amp;bs=genymotion%E7%A0%B4%E8%A7%A3%E7%89%88" target="_blank" rel="noopener">virtualbox</a>就行了</li>
+<li>以上安装好之后打开<strong>genymotion</strong>，根据提示添加一个设备并运行该安卓模拟器<br><img src="/2017/04/22/react-native进入姿势/gen.jpg" alt="gen"></li>
+<li>安装完毕，选择一个添加好的虚拟机，并启动。 糟糕，不知什么原因报错了。<br><img src="/2017/04/22/react-native进入姿势/err.jpg" alt="err"><br><code>碰到这种报错不用怕，打开virtualBox，直接启动安装好的虚拟机。</code><br><img src="/2017/04/22/react-native进入姿势/verr.jpg" alt="verr"><br><code>可以看出来是virtualBox的配置有错误，那就打开配置信息</code><br><img src="/2017/04/22/react-native进入姿势/configerr.jpg" alt="configerr"><br><code>跟随黄色提示配置好virtualBox,继续启动在genymotion里面添加的设备，完美!</code><br><img src="/2017/04/22/react-native进入姿势/success.jpg" alt="success">  </li>
+<li>在genymotion里面配置sdk路径<br><img src="/2017/04/22/react-native进入姿势/sdk.png" alt="sdk"></li>
+<li>如果还是提示连接不上设备，就用adb连接一下<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; adb devices</span><br><span class="line">&gt; adb connect 127.0.0.1</span><br><span class="line">&gt; adb devices</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="开始开发"><a href="#开始开发" class="headerlink" title="开始开发"></a>开始开发</h2><ol>
+<li>各种配置都设置好了，继续运行<code>react-native run-android</code></li>
+<li>尼玛又是error,这次明显的看出提示没有连接上js Service,得手动连接了<br><img src="/2017/04/22/react-native进入姿势/netErr.jpg" alt="netErr"><br><code>点击菜单 -&gt; Dev Setting -&gt; Debug server host</code><br><img src="/2017/04/22/react-native进入姿势/dev.jpg" alt="dev"><br><img src="/2017/04/22/react-native进入姿势/host.jpg" alt="host"><br><code>然后返回，reload一下</code><br><img src="/2017/04/22/react-native进入姿势/reload.jpg" alt="reload"><br><code>出现成功界面，可以愉快的开发了</code><br><img src="/2017/04/22/react-native进入姿势/devSuccess.jpg" alt="devSuccess"><br><strong>注意：在菜单里面点击 Enable Hot Reloading，这样就可以保存后实时刷新了</strong></li>
+</ol>
+<h3 id="正式开发，就写一个简单的底部导航路由"><a href="#正式开发，就写一个简单的底部导航路由" class="headerlink" title="正式开发，就写一个简单的底部导航路由"></a>正式开发，就写一个简单的底部导航路由</h3><p>用到底部导航package <a href="https://github.com/expo/react-native-tab-navigator" target="_blank" rel="noopener">react-native-tab-navigator</a><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; yarn add react-native-tab-navigator</span><br></pre></td></tr></table></figure></p>
+<p>修改<code>index.android.js</code>,给入口少搁点东西，不然看着恶心<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123;</span><br><span class="line">  AppRegistry</span><br><span class="line">&#125; <span class="keyword">from</span> <span class="string">'react-native'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> RootApp <span class="keyword">from</span> <span class="string">'./app/RootApp'</span></span><br><span class="line"></span><br><span class="line">AppRegistry.registerComponent(<span class="string">'rnDemo'</span>, () =&gt; RootApp); <span class="comment">// rnDemo是项目的名称</span></span><br></pre></td></tr></table></figure></p>
+<p>在根目录新建文件夹app，在app里面新建 RootApp.js、components/Home.js、components/Nice.js  </p>
+<p>app/RootApp.js<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123;Component&#125; <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"><span class="keyword">import</span> &#123;</span><br><span class="line">  View,</span><br><span class="line">  StyleSheet</span><br><span class="line">&#125; <span class="keyword">from</span> <span class="string">'react-native'</span></span><br><span class="line"><span class="keyword">import</span> TabNavigator <span class="keyword">from</span> <span class="string">'react-native-tab-navigator'</span></span><br><span class="line"><span class="keyword">import</span> Home <span class="keyword">from</span> <span class="string">'./components/Home'</span></span><br><span class="line"><span class="keyword">import</span> Nice <span class="keyword">from</span> <span class="string">'./components/Nice'</span></span><br><span class="line"><span class="keyword">import</span> TabNavigatorItem <span class="keyword">from</span> <span class="string">"react-native-tab-navigator/TabNavigatorItem"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">RootApp</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">    <span class="keyword">super</span>(props)</span><br><span class="line">    <span class="keyword">this</span>.state = &#123;</span><br><span class="line">      selectedTab: <span class="string">'home'</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;View style=&#123;styles.container&#125;&gt;</span><br><span class="line">        &lt;TabNavigator&gt;</span><br><span class="line">          &lt;TabNavigatorItem</span><br><span class="line">            title=<span class="string">"Home"</span></span><br><span class="line">            onPress=&#123;() =&gt; <span class="keyword">this</span>.setState(&#123;<span class="attr">selectedTab</span>: <span class="string">'home'</span>&#125;)&#125;</span><br><span class="line">            selected=&#123;<span class="keyword">this</span>.state.selectedTab === <span class="string">'home'</span>&#125;&gt;</span><br><span class="line">            &lt;Home/&gt;</span><br><span class="line">          &lt;<span class="regexp">/TabNavigatorItem&gt;</span></span><br><span class="line"><span class="regexp">          &lt;TabNavigatorItem</span></span><br><span class="line"><span class="regexp">            title="Nice"</span></span><br><span class="line"><span class="regexp">            onPress=&#123;() =&gt; this.setState(&#123;selectedTab: 'nice'&#125;)&#125;</span></span><br><span class="line"><span class="regexp">            selected=&#123;this.state.selectedTab === 'nice'&#125;&gt;</span></span><br><span class="line"><span class="regexp">            &lt;Nice/</span>&gt;</span><br><span class="line">          &lt;<span class="regexp">/TabNavigatorItem&gt;</span></span><br><span class="line"><span class="regexp">        &lt;/</span>TabNavigator&gt;</span><br><span class="line">      &lt;<span class="regexp">/View&gt;</span></span><br><span class="line"><span class="regexp">    )</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">let styles = StyleSheet.create(&#123;</span></span><br><span class="line"><span class="regexp">  container: &#123;</span></span><br><span class="line"><span class="regexp">    flex: 1,</span></span><br><span class="line"><span class="regexp">    backgroundColor: '#ccc'</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;);</span></span><br></pre></td></tr></table></figure></p>
+<p>app/components/Home.js<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123;Component&#125; <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"><span class="keyword">import</span> &#123;</span><br><span class="line">  Text</span><br><span class="line">&#125; <span class="keyword">from</span> <span class="string">'react-native'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">Home</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;Text&gt;</span><br><span class="line">        我是Home</span><br><span class="line">      &lt;<span class="regexp">/Text&gt;</span></span><br><span class="line"><span class="regexp">    )</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure></p>
+<p>app/components/Nice.js<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123;Component&#125; <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"><span class="keyword">import</span> &#123;</span><br><span class="line">  Text</span><br><span class="line">&#125; <span class="keyword">from</span> <span class="string">'react-native'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">Nice</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;Text&gt;</span><br><span class="line">        我是Nice</span><br><span class="line">      &lt;<span class="regexp">/Text&gt;</span></span><br><span class="line"><span class="regexp">    )</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure></p>
+<p>大功告成<br><img src="/2017/04/22/react-native进入姿势/bigSuccess.jpg" alt="bigSuccess"></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/javascript/" rel="tag"># javascript</a>
+          
+            <a href="/tags/reactNative/" rel="tag"># reactNative</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/04/22/angular-rootScope-new/" rel="next" title="angular-$rootScope.$new()">
+                <i class="fa fa-chevron-left"></i> angular-$rootScope.$new()
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/04/22/所谓publish-subscribe/" rel="prev" title="所谓publish-subscribe">
+                所谓publish-subscribe <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="uyan_frame"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <a href="/"><img class="site-author-image" itemprop="image"
+                           src="/images/avatar.png"
+                           alt="slipkinem" /></a>
+          <p class="site-author-name" itemprop="name">slipkinem</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">35</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/lu-sen-8-82/activities" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      知乎
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/slipkinem" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:lvsen6bu6@163.com" target="_blank" title="Email">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Email
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#开始战斗"><span class="nav-number">1.</span> <span class="nav-text">开始战斗</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#准备工作"><span class="nav-number">1.1.</span> <span class="nav-text">准备工作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#环境搭建"><span class="nav-number">2.</span> <span class="nav-text">环境搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#node环境"><span class="nav-number">2.1.</span> <span class="nav-text">node环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#react-native安装"><span class="nav-number">2.2.</span> <span class="nav-text">react-native安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#android开发环境配置"><span class="nav-number">2.3.</span> <span class="nav-text">android开发环境配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#环境变量"><span class="nav-number">2.4.</span> <span class="nav-text">环境变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#再次运行"><span class="nav-number">2.5.</span> <span class="nav-text">再次运行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#连接设备"><span class="nav-number">2.6.</span> <span class="nav-text">连接设备</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#下载genymotion免费版并启动"><span class="nav-number">2.6.1.</span> <span class="nav-text">下载genymotion免费版并启动</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开始开发"><span class="nav-number">3.</span> <span class="nav-text">开始开发</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#正式开发，就写一个简单的底部导航路由"><span class="nav-number">3.1.</span> <span class="nav-text">正式开发，就写一个简单的底部导航路由</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">slipkinem</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Gemini
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+    
+
+    
+      <!-- UY BEGIN -->
+      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2130917"></script>
+      <!-- UY END -->
+    
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,1247 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="angular,javascript," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.png?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="angular权威指南笔记 $interpolate——服务插值表达式，可以设置插值表达式中的数据并$interpolateProvider 可以自定义 flag  =&amp;gt; $x$  orderBy——排序：给显示的文本排序">
+<meta name="keywords" content="angular,javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="angular权威指南笔记">
+<meta property="og:url" content="http://faceplus.top/2017/04/14/angular权威指南学习/index.html">
+<meta property="og:site_name" content="faceplus&#39;s home">
+<meta property="og:description" content="angular权威指南笔记 $interpolate——服务插值表达式，可以设置插值表达式中的数据并$interpolateProvider 可以自定义 flag  =&amp;gt; $x$  orderBy——排序：给显示的文本排序">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-05-15T09:47:12.776Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="angular权威指南笔记">
+<meta name="twitter:description" content="angular权威指南笔记 $interpolate——服务插值表达式，可以设置插值表达式中的数据并$interpolateProvider 可以自定义 flag  =&amp;gt; $x$  orderBy——排序：给显示的文本排序">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://faceplus.top/2017/04/14/angular权威指南学习/"/>
+
+
+
+
+
+  <title>angular权威指南笔记 | faceplus's home</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">faceplus's home</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">小伙子</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://faceplus.top/2017/04/14/angular权威指南学习/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="slipkinem">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="faceplus's home">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">angular权威指南笔记</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-14T18:37:59+08:00">
+                2017-04-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/课外学习/" itemprop="url" rel="index">
+                    <span itemprop="name">课外学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="angular权威指南笔记"><a href="#angular权威指南笔记" class="headerlink" title="angular权威指南笔记"></a>angular权威指南笔记</h4><ol>
+<li><p>$interpolate——服务插值表达式，可以设置插值表达式中的数据并<code>$interpolateProvider</code> 可以自定义 <strong>flag  =&gt; $x$</strong></p>
+</li>
+<li><p>orderBy——排序：给显示的文本排序</p>
+</li>
+</ol>
+<a id="more"></a>
+<ol>
+<li><p><code>$parsers</code><br>当用户同控制器进行交互，并且<code>ngModelController</code><br>中的<code>$setViewValue()</code>方法被调用时，<br><code>$parsers</code>数组中的函数会以流水线的形式被逐个调用。<br>第一个<code>$parse</code>被调用后，执行结果会传<br>递给第二个<code>$parse</code>，以此类推</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">angular.module(<span class="string">'myApp'</span>)</span><br><span class="line">  .directive(<span class="string">'oneToTen'</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      <span class="keyword">require</span>: <span class="string">'?ngModel'</span>,</span><br><span class="line">      link: <span class="function"><span class="keyword">function</span><span class="params">(scope, ele, attrs, ngModel)</span> </span>&#123;</span><br><span class="line">          <span class="keyword">if</span> (!ngModel) <span class="keyword">return</span>;</span><br><span class="line">          ngModel.$parsers.unshift(</span><br><span class="line">          <span class="function"><span class="keyword">function</span><span class="params">(viewValue)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> i = parseInt(viewValue);</span><br><span class="line">            <span class="keyword">if</span> (i &gt;= <span class="number">0</span> &amp;&amp; i &lt; <span class="number">10</span>) &#123;</span><br><span class="line">            ngModel.$setValidity(<span class="string">'oneToTen'</span>, <span class="keyword">true</span>);</span><br><span class="line">            <span class="keyword">return</span> viewValue;</span><br><span class="line">          &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            ngModel.$setValidity(<span class="string">'oneToTen'</span>, <span class="keyword">false</span>);</span><br><span class="line">            <span class="keyword">return</span> undefined;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>$formatters</strong><br>当绑定的<code>ngModel</code>值发生了变化，并经过<code>$parsers</code><br>数组中解析器的处理后，这个值会被传递<br>给<code>$formatters</code>流水线。同<code>$parsers</code><br>数组可以修改表单的合法性状态类似， <code>$formatters</code>中的函<br>数也可以修改并格式化这些值</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">angular.module(<span class="string">'myApp'</span>)</span><br><span class="line">    .directive(<span class="string">'oneToTen'</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> &#123;</span><br><span class="line">          <span class="keyword">require</span>: <span class="string">'?ngModel'</span>,</span><br><span class="line">          link: <span class="function"><span class="keyword">function</span><span class="params">(scope, ele, attrs, ngModel)</span> </span>&#123;</span><br><span class="line">          <span class="keyword">if</span> (!ngModel) <span class="keyword">return</span>;</span><br><span class="line">            ngModel.$formatters.unshift(<span class="function"><span class="keyword">function</span><span class="params">(v)</span> </span>&#123;</span><br><span class="line">              <span class="keyword">return</span> $filter(<span class="string">'number'</span>)(v);</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;;</span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>表单验证：<code>ngModelController.$我是自定义</code><br> 取出 <code>form_name.input_name.$我是自定义</code><br> angular可以通过<code>form_name.input_name.XX</code><br> 拿到在<code>directive</code>里面给<code>ngModelController</code>自定义的布尔值<br> 从而可以通过判断来进行show/hide的表单验证</p>
+</li>
+<li><p>用属性声明指令比较好</p>
+</li>
+<li><p>指令<br><strong>@</strong> 绑定一次性显示的字符串<br><strong>=</strong> 双向绑定会获取作用域上面的值<br><strong>&amp;</strong> 绑定事件<br><strong>yourAttr: ‘@myAttr’</strong> 在<code>html</code>用<code>myAttr</code>，在指令中还是用<code>yourAttr</code></p>
+</li>
+<li><p><code>ng-include</code><br>会创建一个作用域，根据作用域原型继承原理，子作用域能访问父级的值，而反过来就不行了<br>所以不能在父级作用域操作<code>ng-include</code>中的数据，导致无法正常进行<code>$watch</code><br>应该给<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">类似的指令还有 ```ng-controller ng-app</span><br></pre></td></tr></table></figure></p>
+</li>
+<li><p>如要避免插值字符串{&#123; &#125;}为渲染完成闪烁问题，请使用<code>ng-cloak</code>指令</p>
+</li>
+<li><p>ng-attr-(suffix)<br>如使用svg的时候报错，就是用前缀来避免</p>
+<figure class="highlight django"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">svg</span>&gt;</span></span></span><br><span class="line"><span class="xml">  <span class="tag">&lt;<span class="name">circle</span> <span class="attr">cx</span>=<span class="string">"</span></span></span><span class="template-variable">&#123;&#123; cx &#125;&#125;</span><span class="xml"><span class="tag"><span class="string">"</span>&gt;</span><span class="tag">&lt;/<span class="name">circle</span>&gt;</span></span></span><br><span class="line"><span class="xml">  <span class="tag">&lt;/<span class="name">svg</span>&gt;</span> // 报错</span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">svg</span>&gt;</span></span></span><br><span class="line"><span class="xml">  <span class="tag">&lt;<span class="name">circle</span> <span class="attr">ng-attr-cx</span>=<span class="string">"</span></span></span><span class="template-variable">&#123;&#123; cx &#125;&#125;</span><span class="xml"><span class="tag"><span class="string">"</span>&gt;</span><span class="tag">&lt;<span class="name">circle</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">svg</span>&gt;</span>  // OK</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>指令的生命周期开始于<code>$compile</code>结束于<code>link方法</code></p>
+</li>
+<li><p>指令API</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">.directive(<span class="string">''</span>, [<span class="string">''</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">        	<span class="comment">// Runs during compile</span></span><br><span class="line">        	<span class="keyword">return</span> &#123;</span><br><span class="line"></span><br><span class="line">        	  name: <span class="string">''</span>,  `指令名称`</span><br><span class="line"></span><br><span class="line">        	  priority: <span class="number">1</span>, `加载优先级`</span><br><span class="line"></span><br><span class="line">        	  terminal: <span class="keyword">true</span>, `是否让优先级以下的指令不运行`</span><br><span class="line"></span><br><span class="line">        	  scope: &amp;<span class="comment">#123; &amp;#125;, // &amp;#123; &amp;#125; = isolate, true = child, false/undefined = no change</span></span><br><span class="line">        	  `作用域，如果是<span class="keyword">true</span>则不让外部继承，外部读不到</span><br><span class="line">        	    如果是对象则是隔离作用域（作用域不传递）</span><br><span class="line">        	    具有隔离作用域的指令最主要的使用场景是创建可复用的组件，组件可以在未知上下文中使</span><br><span class="line">              用，并且可以避免污染所处的外部作用域或不经意地污染内部作用域`</span><br><span class="line"></span><br><span class="line">        	  controller: <span class="function"><span class="keyword">function</span><span class="params">($scope, $element, $attrs, $transclude)</span> &amp;#123</span>; &amp;<span class="comment">#125;,</span></span><br><span class="line"></span><br><span class="line">        	  `指令的控制`</span><br><span class="line">        	  <span class="keyword">require</span>: <span class="string">'ngModel'</span>, <span class="comment">// Array = multiple requires,   </span></span><br><span class="line">        	                     <span class="comment">// ? = optional（指找不到控制器传递null）,   </span></span><br><span class="line">        	                    <span class="comment">// ^ = check parent elements</span></span><br><span class="line">                             <span class="comment">// PS:可以在link方法的第四个参数指向该指令的controller</span></span><br><span class="line"></span><br><span class="line">        	  restrict: <span class="string">'A'</span>, <span class="comment">// E = Element,   </span></span><br><span class="line">        	                <span class="comment">// A = Attribute,   </span></span><br><span class="line">        	               <span class="comment">// C = Class,  </span></span><br><span class="line">        	              <span class="comment">// M = Comment</span></span><br><span class="line">        	             <span class="comment">// 声明方式</span></span><br><span class="line">        	             </span><br><span class="line">        	  template: <span class="string">''</span>, <span class="comment">// 字符串</span></span><br><span class="line">        	  </span><br><span class="line">        	  templateUrl: <span class="string">''</span>, <span class="comment">// 指令html的地址</span></span><br><span class="line">        	  </span><br><span class="line">        	  replace: <span class="keyword">true</span>, <span class="comment">// 用html标签完全替代此指令</span></span><br><span class="line">        	  </span><br><span class="line">        	  transclude: <span class="keyword">true</span>, </span><br><span class="line">        	       <span class="comment">// 如果为true则无法正常监听数据变化，被用来，</span></span><br><span class="line">        	      <span class="comment">//  只有当你希望创建一个可以包含任意内容的指令时， </span></span><br><span class="line">        	     <span class="comment">//  才使用transclude: true。</span></span><br><span class="line">        	    <span class="comment">//  配合ng-transclude插进去</span></span><br><span class="line">        	  </span><br><span class="line">        	  compile: <span class="function"><span class="keyword">function</span><span class="params">(tElement, tAttrs,   </span></span></span><br><span class="line"><span class="function"><span class="params">                        function transclude<span class="params">(  </span></span></span></span><br><span class="line"><span class="function"><span class="params"><span class="params">                      </span></span></span></span><br><span class="line"><span class="function"><span class="params"><span class="params">                        function<span class="params">(scope, cloneLinkingFn)</span>&#123;   </span></span></span></span><br><span class="line"><span class="function"><span class="params"><span class="params">                      </span></span></span></span><br><span class="line"><span class="function"><span class="params"><span class="params">                          return function linking<span class="params">(scope, elm, attrs)</span>&amp;#<span class="number">123</span>; &amp;#<span class="number">125</span>;&#125;)</span>)</span>,</span></span><br><span class="line"><span class="function">        		</span></span><br><span class="line"><span class="function">        		<span class="title">link</span>: <span class="title">function</span><span class="params">($scope, iElm, iAttrs, controller)</span> </span>&#123;</span><br><span class="line">        			</span><br><span class="line">        		&#125;</span><br><span class="line">        	&#125;;</span><br><span class="line">        &#125;])</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Angular生命周期</p>
+<ol>
+<li>编译阶段： 遍历整个HTML，查找处理指令，遍历指令里面所有的模板，此时还没有数据绑定，<br>ng-repeat和ng-include类似的就会在在此时进行操作，减少开销</li>
+<li>compile：在数据放入指令之前安全操作DOM</li>
+<li>pre-link：将作用域与DOM连接起来之前操作dom，不安全的转换DOM</li>
+<li>post-link: 负责事件监听器，监听数据和实时的DOM操作，如果需要性能，用compile</li>
+<li>destroy</li>
+</ol>
+</li>
+<li><p>ngModel </p>
+<ul>
+<li>要访问<code>ngModelController</code>必须在指令里面require</li>
+<li>不要有隔离作用域，隔离作用域会导致无法更新外部绑定的值<ul>
+<li>$viewValue 获取ngModel的值</li>
+<li>$setViewValue 设置ngModel的值，需要手动触发<code>$digest</code>循环</li>
+<li>$render自定义渲染，会在<code>$parser</code>流水线执行完后调用，慎用</li>
+<li>$parsers：数组，处理加工ngModel数据，ngModel从DOM读出来的值会被当参数传入，到数据模型</li>
+<li>$formatters 数组，在数据模型变的时候函数一一调用</li>
+<li>$viewChangeListeners 无需<code>$watch</code>函数不需要返回值，视图中的值变化时一一调用</li>
+<li>$error 没有通过验证的信息</li>
+<li>$pristine 是否对控件没有交互过</li>
+<li>$dirty 用户是否交互过</li>
+<li>$valid 是否正确 $setValidity设置</li>
+<li>$invalid 是否错误</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>constant会在所有配置config之前执行。config: 模块加载时会执行此函数</p>
+</li>
+<li><p>run 类main函数，在注入器创建之后被执行，是第一个被执行的方法，一般篇日志路由事件监听器<br>每次路由改变时执行run方法</p>
+</li>
+<li><p>路由<br>ng-view 最高权限指令同一元素只会运行ng-view<br>ng-view运行顺序<br>触发$routeChangeSuccess后试图会更新<br>模板会通过路由与ng-view关联</p>
+<ol>
+<li>创建一个新作用域</li>
+<li>移除上一个视图，同时清除作用域</li>
+<li>关联当前模板</li>
+<li>如果路由中定义的controller则与当前作用域关联起来</li>
+<li>触发$viewContentLoaded</li>
+<li>调用onload指定的函数（如果有）</li>
+</ol>
+<p><strong>router的resolve属性，$injector会将声明的key添加进依赖，并能注入</strong></p>
+<p><strong>$location相当于window.location的封装，但只针对视图，不能针对全局浏览器窗口</strong></p>
+</li>
+<li><p>依赖注入</p>
+<ul>
+<li>对象通常过的其控制权的方式</li>
+<li>在内部创建依赖；</li>
+<li>通过全局变量进行引用；</li>
+<li>在需要的地方通过参数进行传递</li>
+</ul>
+<p>angular依赖注入使用$injector来管里依赖关系和实例化<br>包括模块，指令，控制器的注入<br>在运行时， 任何模块启动时$injector都会负责实例化，并将其需要的所有依赖传递进去</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">angular.module(<span class="string">'myApp'</span>, [])</span><br><span class="line">     .factory(<span class="string">'greeter'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">       <span class="keyword">return</span> &#123;</span><br><span class="line">         greet: <span class="function"><span class="keyword">function</span>(<span class="params">msg</span>) </span>&#123;alert(msg);&#125;</span><br><span class="line">       &#125;</span><br><span class="line">     &#125;)</span><br><span class="line">     .controller(<span class="string">'MyController'</span>,</span><br><span class="line">       <span class="function"><span class="keyword">function</span>(<span class="params">$scope, greeter</span>) </span>&#123;</span><br><span class="line">         $scope.sayHello = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">         greeter.greet(<span class="string">"Hello!"</span>);</span><br><span class="line">       &#125;;</span><br><span class="line">     &#125;);</span><br><span class="line">     </span><br><span class="line">     &lt;div ng-app=<span class="string">"myApp"</span>&gt;</span><br><span class="line">       &lt;div ng-controller=<span class="string">"MyController"</span>&gt;</span><br><span class="line">         &lt;button ng-click=<span class="string">"sayHello()"</span>&gt;Hello&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">       &lt;/</span>div&gt;</span><br><span class="line">     &lt;<span class="regexp">/div</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h5 id="angular加载过程"><a href="#angular加载过程" class="headerlink" title="angular加载过程"></a>angular加载过程</h5><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="regexp">//</span> 使用注入器加载应用</span><br><span class="line">var injector = angular.injector([<span class="string">'ng'</span>, <span class="string">'myApp'</span>]);</span><br><span class="line"><span class="regexp">//</span> 通过注入器加载<span class="variable">$controller</span>服务： var <span class="variable">$controller</span> = injector.get(<span class="string">'$controller'</span>);</span><br><span class="line">var scope = injector.get(<span class="string">'$rootScope'</span>).<span class="variable">$new</span>();</span><br><span class="line"><span class="regexp">//</span> 加载控制器并传入一个作用域，同AngularJS在运行时做的一样</span><br><span class="line">var MyController = <span class="variable">$controller</span>(<span class="string">'MyController'</span>, &#123;<span class="variable">$scope</span>: scope&#125;)</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>angular通过<strong>annotate</strong>函数将greeter从参数列表中提取出来<br>如果没有加[]进行显式的声明，那么ng就会通过参数来获取依赖关系</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">injector.annotate(<span class="function"><span class="keyword">function</span><span class="params">($q, myService)</span></span>&#123; &#125;)</span><br><span class="line"><span class="comment">// annotate会返回被注入目标中的服务的名称，从而进行匹配</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>injector.invoke(func($q)) 调用方法, fn.apply(self, args)<br>将参数列表转化成实例后的函数在进行调用<br>大概如此：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Fucker</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.getFucker = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'motherfucker'</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">invoke</span>(<span class="params">fn, self</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 一般是['dep1', 'dep2', func]</span></span><br><span class="line">  <span class="comment">// 会找寻依赖对应的参数函数并通过方法将其实例化</span></span><br><span class="line">  <span class="comment">// 调用func</span></span><br><span class="line">  fn.apply(self, [<span class="keyword">new</span> Fucker()])</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">invoke(<span class="function"><span class="keyword">function</span> (<span class="params">fucker</span>) </span>&#123;</span><br><span class="line">  fucker.getFucker() <span class="comment">// motherfucker</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ol>
+<li><p>分析ng-include为什么会导致无法正常双向绑定</p>
+<ul>
+<li>ng-include指令会生成一个作用域 (child)</li>
+<li>ng-include父节点的作用域（parent）</li>
+<li>parent.flag = “test” 根据原型继承原理 child.<em>proto</em>.flag = “test”</li>
+<li>当parent.flag变成”dev” 则child.<em>proto</em>.flag = “dev”</li>
+<li>如果child.flag = “product” 则 child.flag 与 parent.flag 失去联系</li>
+<li>解决这种问题需要，将要传递的属性变为对象形式<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">  function Parent() &#123;</span><br><span class="line">    this<span class="selector-class">.face</span> = <span class="string">"哈哈"</span></span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  Parent<span class="selector-class">.prototype</span> = &#123;</span><br><span class="line">    constructor: Parent,</span><br><span class="line">  </span><br><span class="line">    <span class="variable">$new</span>: function () &#123;</span><br><span class="line">      <span class="selector-tag">var</span> child</span><br><span class="line">  </span><br><span class="line">      this.$<span class="variable">$childScope</span> = function () &#123;</span><br><span class="line">        this.<span class="variable">$id</span> = <span class="number">112212</span></span><br><span class="line">      &#125;</span><br><span class="line">      this.$<span class="variable">$childScope</span><span class="selector-class">.prototype</span> = this</span><br><span class="line">      child = new this.$<span class="variable">$childScope</span>()</span><br><span class="line">  </span><br><span class="line">      return child</span><br><span class="line">    &#125;</span><br><span class="line">  </span><br><span class="line">  &#125;</span><br><span class="line">  <span class="selector-tag">var</span> parentScope = new Parent()</span><br><span class="line">  </span><br><span class="line">  <span class="selector-tag">var</span> childScope = parentScope.<span class="variable">$new</span>()</span><br><span class="line">  </span><br><span class="line">console.log(</span><br><span class="line">  [parentScope<span class="selector-class">.face</span>, parentScope<span class="selector-class">.fixed</span><span class="selector-class">.face</span>],</span><br><span class="line">  [childScope<span class="selector-class">.face</span>, childScope<span class="selector-class">.fixed</span><span class="selector-class">.face</span>]</span><br><span class="line">) <span class="comment">// ["哈哈", "哈哈"] ["哈哈", "哈哈"]</span></span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line">parentScope<span class="selector-class">.face</span> = <span class="string">"test"</span></span><br><span class="line">parentScope<span class="selector-class">.fixed</span><span class="selector-class">.face</span> = <span class="string">"test"</span></span><br><span class="line">console.log(</span><br><span class="line">  [parentScope<span class="selector-class">.face</span>, parentScope<span class="selector-class">.fixed</span><span class="selector-class">.face</span>],</span><br><span class="line">  [childScope<span class="selector-class">.face</span>, childScope<span class="selector-class">.fixed</span><span class="selector-class">.face</span>]</span><br><span class="line">) <span class="comment">// ["test", "test"] ["test", "test"]</span></span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line">childScope<span class="selector-class">.face</span> = <span class="string">"我是谁"</span></span><br><span class="line">childScope<span class="selector-class">.fixed</span><span class="selector-class">.face</span> = <span class="string">"我是谁"</span></span><br><span class="line">console.log(</span><br><span class="line">  [parentScope<span class="selector-class">.face</span>, parentScope<span class="selector-class">.fixed</span><span class="selector-class">.face</span>],</span><br><span class="line">  [childScope<span class="selector-class">.face</span>, childScope<span class="selector-class">.fixed</span><span class="selector-class">.face</span>]</span><br><span class="line">)<span class="comment">// ["test", "我是谁"] ["我是谁", "我是谁"]</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>$scope生命周期</p>
+<ul>
+<li>创建</li>
+<li>创建控制器或指令时，angular会用<code>$injector</code>创建一个作用域，并在新建的控制器指令中将作用域传递进去<ul>
+<li><code>$scope</code>会通过<code>$new</code>创建通过原型与父级保持联系</li>
+</ul>
+</li>
+<li>链接</li>
+<li>用$watch将数据监听</li>
+<li>更新</li>
+<li>当$watch监听到变化，触发回调</li>
+<li>销毁</li>
+<li>视图不需要会销毁自己</li>
+</ul>
+</li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/angular/" rel="tag"># angular</a>
+          
+            <a href="/tags/javascript/" rel="tag"># javascript</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/04/14/vue-cli创建的任务和后台交互cookie及restAPI处理/" rel="next" title="vue-cli创建的任务和后台交互cookie及restAPI处理">
+                <i class="fa fa-chevron-left"></i> vue-cli创建的任务和后台交互cookie及restAPI处理
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/04/18/es6版promise/" rel="prev" title="es6版promise">
+                es6版promise <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="uyan_frame"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <a href="/"><img class="site-author-image" itemprop="image"
+                           src="/images/avatar.png"
+                           alt="slipkinem" /></a>
+          <p class="site-author-name" itemprop="name">slipkinem</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">35</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/lu-sen-8-82/activities" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      知乎
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/slipkinem" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:lvsen6bu6@163.com" target="_blank" title="Email">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Email
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#angular权威指南笔记"><span class="nav-number">1.</span> <span class="nav-text">angular权威指南笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#angular加载过程"><span class="nav-number">1.1.</span> <span class="nav-text">angular加载过程</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">slipkinem</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Gemini
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+    
+
+    
+      <!-- UY BEGIN -->
+      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2130917"></script>
+      <!-- UY END -->
+    
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
