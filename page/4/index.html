@@ -307,6 +307,285 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://faceplus.top/2017/04/22/angular-rootScope-new/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="slipkinem">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="faceplus's home">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/04/22/angular-rootScope-new/" itemprop="url">angular-$rootScope.$new()</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-22T09:32:15+08:00">
+                2017-04-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Scope实例上面有这么一个属性：-new"><a href="#Scope实例上面有这么一个属性：-new" class="headerlink" title="Scope实例上面有这么一个属性：$new()"></a>Scope实例上面有这么一个属性：$new()</h2><h3 id="new-isolate-parent"><a href="#new-isolate-parent" class="headerlink" title="$new(isolate, parent)"></a>$new(isolate, parent)</h3><p><code>所有scope都是通过$new创建</code></p>
+<h4 id="参数解释"><a href="#参数解释" class="headerlink" title="参数解释"></a>参数解释</h4><ol>
+<li><p>参数一（isolate）设置是否为孤立作用域</p>
+<ul>
+<li>如果是<code>true</code>，则建立孤立作用域，孤立作用域直接和祖级作用域联系 <code>child = new Scope(); child.$root = this.$root</code></li>
+<li>如果是<code>false</code>，则判断此<code>$rootScope</code>有没有子作用域，如果没有则建立一个子作用域构造函数，并且将这个子作用域的原型指向<code>this（</code>$rootScope =&gt; Scope的实例<code>）</code>,然后将<code>child = new this.$$ChildScope() child.__proto__ = Scope.prototype</code></li>
+</ul>
+</li>
+<li><p>参数二设置要<code>new</code>的作用域的<code>parent</code>，如果不设置则将<code>parent = this</code>， 也就是将<code>new</code>的<code>child</code>挂载到<code>this(此$rootScope)上面，然后给</code>parent<code>的子作用域排序，有个判断如果设置了</code>isolate<code>并且</code>parent != this`,<strong>则作用域不监听$destory事件</strong></p>
+</li>
+<li><p>e.g:<br><code>var scope = $rootScope.$new()</code></p>
+<h5 id="没有指定参数，则1-将scope的父级指向-rootScope-2-将scope创建为-rootScope的子作用域，并在原型上继承-rootScope的所有属性方法，返回。"><a href="#没有指定参数，则1-将scope的父级指向-rootScope-2-将scope创建为-rootScope的子作用域，并在原型上继承-rootScope的所有属性方法，返回。" class="headerlink" title="没有指定参数，则1.将scope的父级指向$rootScope, 2.将scope创建为$rootScope的子作用域，并在原型上继承$rootScope的所有属性方法，返回。"></a>没有指定参数，则1.将scope的父级指向$rootScope, 2.将scope创建为$rootScope的子作用域，并在原型上继承$rootScope的所有属性方法，返回。</h5><p>`</p>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://faceplus.top/2017/04/21/java用jdbc-servelet时的问题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="slipkinem">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="faceplus's home">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/04/21/java用jdbc-servelet时的问题/" itemprop="url">java用jdbc，servelet的一个小问题</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-21T10:14:19+08:00">
+                2017-04-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/exception/" itemprop="url" rel="index">
+                    <span itemprop="name">exception</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ol>
+<li>在用jdbc连接数据库的时候碰见一个tomcat抛得错误，<br><code>java.lang.ClassNotFoundException: com.mysql.jdbc.Driver</code> ，<br>感觉不对，我已经在idea的Modules里面添加了mysql.jar的包，在测试的时候连接是正常的。<br>原来要将mysql驱动包复制到tomcat的lib文件夹。  </li>
+<li>在连接驱动包的时候碰见这种写法<code>Class.forName(&quot;com.mysql.jdbc.Driver&quot;)</code><br>原来这种写法是注册mysql依赖包，等同于<code>DriverManager.registerDriver(new com.mysql.jdbc.Driver());</code></li>
+<li>maven：为了让依赖好管理， mybatis：为了让DML更简单，spring：为了让servlet更好用</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://faceplus.top/2017/04/19/学习计划/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1042,7 +1321,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">35</span>
+                <span class="site-state-item-count">37</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1053,7 +1332,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1064,7 +1343,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-count">23</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -1271,10 +1550,6 @@
 
 
   
-    
-
-    
-  
 
 
 
@@ -1285,6 +1560,29 @@
 
 
 
+
+
+
+  
+
+    
+      <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+      <script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+      <script type="text/javascript">
+        var gitalk = new Gitalk({
+          clientID:  '6c33eff30f94afc6f10d',
+          clientSecret: '72b9a98391b7a1e9792c2bf03abc1a89e09884b9',
+          id: window.location.pathname,
+          repo: 'slipkinem.github.io',
+          owner: 'slipkinem',
+          admin: 'slipkinem',
+          distractionFreeMode: 'true',
+        })
+        gitalk.render('gitalk-container')
+      </script>
+    
+
+  
 
 
   
